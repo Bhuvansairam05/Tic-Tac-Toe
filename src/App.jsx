@@ -6,10 +6,7 @@ function App() {
   );
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const[winner, setWinner] = useState("");
-<<<<<<< HEAD
-  let flag= false;
-=======
->>>>>>> a93d8b280d8e475087a889d63ce2a228a5d15a36
+
   function checkRow(board, currentPlayer){
     for(let i=0;i<3;i++){
       if(board[i][0]==currentPlayer && board[i][1]==currentPlayer && board[i][2]==currentPlayer){
