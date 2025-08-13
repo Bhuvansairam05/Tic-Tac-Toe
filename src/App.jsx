@@ -71,6 +71,7 @@ function App() {
           flag = false;
           return;
         }
+        return;
       }
       if(confirm("Game ended with tie do you want to restart game")){
         reStart();
