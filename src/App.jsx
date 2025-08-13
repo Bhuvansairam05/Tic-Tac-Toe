@@ -76,6 +76,9 @@ function App() {
       if(confirm("Game ended with tie do you want to restart game")){
         reStart();
       }
+      else{
+        setWinner("Tie");
+      }
     }
     setCurrentPlayer(currentPlayer=="X"?"O":"X");
   }
