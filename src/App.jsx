@@ -6,7 +6,7 @@ function App() {
   );
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const[winner, setWinner] = useState("");
-
+  let flag = false;
   function checkRow(board, currentPlayer){
     for(let i=0;i<3;i++){
       if(board[i][0]==currentPlayer && board[i][1]==currentPlayer && board[i][2]==currentPlayer){
@@ -61,10 +61,17 @@ function App() {
     checkCol(newBoard, currentPlayer)||
     checkDiagonal(newBoard, currentPlayer)||
     checkReverseDiagonal(newBoard, currentPlayer)){
+      flag = true;
       setWinner(currentPlayer=="X"?"X":"O");
     }
     if(checkNotEmpty(newBoard)){
-
+      if(flag){
+        if(confirm("Game ended with "+currentPlayer+" as winner")){
+          reStart();
+          flag = false;
+          return;
+        }
+      }
       if(confirm("Game ended with tie do you want to restart game")){
         reStart();
       }
